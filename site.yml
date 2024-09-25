@@ -1,19 +1,13 @@
 ---
-- name: Install and Start the service
-  hosts: all
-  vars:
-    - app: httpd
+- name: Uses ansible_date_time fact to retrieve data and timestamp
+  hosts: 192.168.56.221
 
   tasks:
-  - name: Installing nginx
-    yum:
-      name: "{{ app }}"
-      state: present
-    tags: i-nginx
 
-  - name: Starting the nginx service
-    service:
-      name: "{{ app }}"
-      state: started
-      enabled: true
-    tags: ss-nginx
+  - name: Ansible fact - ansible_date_time
+    debug:
+     var: ansible_date_time
+
+  - name: Ansible fact - ansible_date_time.iso8601
+    debug:
+     msg: "Timestamp in the ISO8601 format: {{ ansible_date_time.iso8601 }}"
