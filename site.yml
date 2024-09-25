@@ -1,5 +1,7 @@
+---
 - name: Play to Packages
 - hosts: my_server
+- hosts: All
   become: true
   tasks:
   - name: Install php and nginx
