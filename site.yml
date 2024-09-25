@@ -1,5 +1,9 @@
----
+- name: Play to Packages
 - hosts: my_servers
-  become: true
   tasks:
-    - name: Print OS info
+  - name: Install php and nginx
+    package:
+      name:
+        - php
+        - nginx
+      state: present
