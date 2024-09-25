@@ -1,5 +1,6 @@
 - name: Play to Packages
-- hosts: my_servers
+- hosts: 
+    - 192.168.56.221    
   tasks:
   - name: Install php and nginx
     package:
