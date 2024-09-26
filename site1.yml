@@ -1,0 +1,5 @@
+---    
+    - hosts: all
+      tasks:
+       - name: nano install
+         yum: name=nano state=latest
